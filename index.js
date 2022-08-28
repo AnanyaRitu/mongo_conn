@@ -21,8 +21,12 @@ const student = new mongoose.Schema({
 const Student = new mongoose.model('Student', student);
 
 const adder = async () => {
+  //finding a student with height equal to 6
   const ss = await Student.find({ height: { $eq: 6 } });
   console.log(ss);
+
+  //two different ways of adding new document to the db
+
   //   const ss = new Student({
   //     name: 'Abhi',
   //     workout: true,
